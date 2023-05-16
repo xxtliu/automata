@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Not sure which product to choose? We can help you! </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
+</head>
+<body>
+    <h2>Not sure which product to choose? We can help you!</h2>
+    
+    <p>174 Models Available</p>
+    <div class="basic-grey">
+        {# number, temperature, humidity, placement, control box internal or external #}
+        <form action = "http://localhost:5000/result" method = "POST">
+            <label>
+                <span>How many microplates do you want to store:</span>
+                <input type="number" name="number" min="0" max="1000" autocomplete="off" required>
+            </label>
+            <label>
+                <span>Lowest Temperature:</span>
+                <input type="number" name="temp_low" autocomplete="off" required>
+                <span>Highest Temperature:</span>
+                <input type="number" name="temp_high" autocomplete="off" required>
+            </label>
+            <label>
+                <span>Lowest Humidity:</span>
+                <input type="number" name="humd_low" autocomplete="off" required>
+                <span>Highest Humidity:</span>
+                <input type="number" name="humd_high" autocomplete="off" required>
+            </label>
+
+            <label>
+                <span>Select the placement:</span>
+                <select name="place" id="place">
+                    <option value="BT">BT - Bench Top</option>
+                    <option value="SA">SA - Stand Alone</option>
+                    <option value="IT">IT - Internal</option>
+                    <option value="MIBT">MIBT - Bench Top with an External Control Box</option>
+                    <option value="MISA">MISA - Stand Alone with an External Control Box</option>
+                  </select>
+            </label>
+            <label>
+                <input class="btn" type="submit" name="submit" value="Search">
+            </label>
+        </form>
+    </div>
+
+    <p>Placement Reference</p>
+    <img alt="placement" class="placement" src="{{ url_for('static', filename='placement.png') }}">
+
+    <img alt="Automata" class = "logo" src="{{ url_for('static', filename='automata_logo.png') }}">
+    <img alt="LiCONiC" class = "logo" src="{{ url_for('static', filename='LiCONiC.png') }}">
+
+    <footer>
+        <small>&copy; This is a take-home test for Automata. Written by Skye Liu.</small>
+    </footer>
+</body>
+</html>

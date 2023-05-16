@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Not sure which product to choose? We can help you! </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
+</head>
+<body>
+    <h2>Not sure which product to choose? We can help you!</h2>
+    <p>{{ machines|length }} Models Available</p>
+    <label>
+        <button class="btn" onclick="window.location.href='http://localhost:5000';">
+            Ruturn
+        </button>
+    </label>
+    <ul class="machine-list">
+        {% for m in machines %}  
+        <li>{{m}}</li>  
+        {% endfor %}  
+    </ul>
+    <img alt="Automata" class = "logo" src="{{ url_for('static', filename='automata_logo.png') }}">
+    <img alt="LiCONiC" class = "logo" src="{{ url_for('static', filename='LiCONiC.png') }}">
+    <footer>
+        <small>&copy; This is a take-home test for Automata. Written by Skye Liu.</small>
+    </footer>
+</body>
+</html>
