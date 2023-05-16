@@ -7,7 +7,7 @@ Demo clips:
 Main Page - 
 ![image](https://github.com/xxtliu/automata/blob/main/demo1_main.gif)
 
-Input - 
+Input - Shoule type in numbers, capacity <= 1000, no blank input
 ![image](https://github.com/xxtliu/automata/blob/main/demo3_valid.gif)
 
 Search for Available Products -
